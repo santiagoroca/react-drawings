@@ -1,4 +1,4 @@
-class Pen {
+class Eraser {
 
   constructor (context) {
     this.lastX = 0;
@@ -48,4 +48,4 @@ class Pen {
 
 }
 
-export default Pen
+export default Eraser

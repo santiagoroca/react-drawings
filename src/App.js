@@ -32,6 +32,27 @@ class App extends Component {
     ];
 
     this.canvasRef = React.createRef();
+    document.addEventListener('keyup', event => this.onKeyPress(event))
+
+    //
+    this.canvasMemento = [];
+  }
+
+  save () {
+    this.canvasMemento.push(this.canvasRef.current.getImageData(
+      0,
+      0,
+      this.state.width,
+      this.state.height
+    ))
+  }
+
+  restore () {
+    if (this.canvasMemento.length) {
+      const imageData = this.canvasMemento[this.canvasMemento.length-1];
+      this.canvasRef.current.putImageData(imageData);
+      this.canvasMemento.splice(-1)  
+    }
   }
 
   onMouseDown (event) {
@@ -50,7 +71,6 @@ class App extends Component {
   }
 
   onKeyPress (event) {
-    alert("D");
     const handler = this.states[this.state.mode];
     handler.onKeyPress.bind(handler)(event);
   }
@@ -68,7 +88,6 @@ class App extends Component {
            onMouseDown={event => this.onMouseDown(event)}
            onMouseMove={event => this.onMouseMove(event)}
            onMouseUp={event => this.onMouseUp(event)}
-           onKeyPress={event => console.log("VE")}
         ></canvas>
         <Toolbar
           key={0}
