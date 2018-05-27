@@ -1,10 +1,14 @@
 .toolbar-icon-wrapper {
-  padding: 5px;
+  padding: 10px;
+  text-shadow: 1px 0 #e4e4e4;
+  color: transparent;
+  box-sizing: border-box;
 }
 
 .toolbar-icon-wrapper:hover {
   cursor: pointer;
   transform: scale(1.2);
+  text-shadow: 1px 0 #444;
 }
 
 .red {

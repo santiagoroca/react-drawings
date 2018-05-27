@@ -6,6 +6,7 @@ class ToolbarItem extends Component {
 
   render() {
 
+    let styles = {}
     let className = 'fa fa-';
 
     if (this.props.icon) {
@@ -13,7 +14,7 @@ class ToolbarItem extends Component {
     }
 
     if (this.props.color) {
-        className += `${this.props.color} `;
+        styles['color'] = `${this.props.color}`;
     }
 
     if (this.props.size) {
@@ -24,6 +25,7 @@ class ToolbarItem extends Component {
       <div className="toolbar-icon-wrapper">
         <span
           className={className}
+          style={styles}
         />
       </div>
     )

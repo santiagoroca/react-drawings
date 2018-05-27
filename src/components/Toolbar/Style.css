@@ -1,8 +1,16 @@
 .toolbar-wrapper {
   position: absolute;
-  background: red;
+  background: white;
+  box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
 }
 
 .toolbar-inner-wrapper {
   position: relative;
+}
+
+.divisor {
+  width: 80%;
+  margin: 0 auto;
+  height: 1px;
+  background: #e4e4e4;
 }

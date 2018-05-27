@@ -26,7 +26,6 @@ class Toolbar extends Component {
   }
 
   onMouseMove (event) {
-    console.log(event);
     if (this.state.dragging) {
       this.setState({
         left: event.clientX,
@@ -53,11 +52,14 @@ class Toolbar extends Component {
 
         <div className="drag-area"
           onMouseDown={event => this.onMouseDown(event)}>
-          <ToolbarItem icon="ellipsis-h"/>
+          <ToolbarItem icon="ellipsis-h" color="#e4e4e4"/>
         </div>
 
+        <div className="divisor"><div></div></div>
+
         <div className="toolbar-inner-wrapper">
-          <ToolbarItem icon="pencil-alt" size="x2"/>
+          <ToolbarItem icon="pencil-alt"/>
+          <ToolbarItem icon="font"/>
         </div>
       </div>
     )
