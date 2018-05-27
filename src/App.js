@@ -51,7 +51,7 @@ class App extends Component {
     if (this.canvasMemento.length) {
       const imageData = this.canvasMemento[this.canvasMemento.length-1];
       this.canvasRef.current.putImageData(imageData);
-      this.canvasMemento.splice(-1)  
+      this.canvasMemento.splice(-1)
     }
   }
 
@@ -112,6 +112,10 @@ class App extends Component {
     this.setState({
       width, height
     })
+
+    if (this.props.onGetMediaStream) {
+      this.props.onGetMediaStream(this.canvasRef.current.captureStream(25));
+    }
   }
 
 }
