@@ -1,7 +1,28 @@
-.toolbar-wrapper {
-  position: absolute;
+.toolbar-icon-wrapper {
+  padding: 5px;
 }
 
-.toolbar-inner-wrapper {
-  position: relative;
+.toolbar-icon-wrapper:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.red {
+  color: red
+}
+
+.x2 {
+  font-size: 200%;
+}
+
+.x3 {
+  font-size: 300%;
+}
+
+.x4 {
+  font-size: 400%;
+}
+
+.x5 {
+  font-size: 500%;
 }

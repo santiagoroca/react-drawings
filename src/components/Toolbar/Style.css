@@ -1,5 +1,6 @@
 .toolbar-wrapper {
   position: absolute;
+  background: red;
 }
 
 .toolbar-inner-wrapper {

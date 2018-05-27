@@ -36,7 +36,10 @@ class App extends Component {
            onMouseMove={event => this.states[this.state.mode].onMouseMove(event)}
            onMouseUp={event => this.states[this.state.mode].onMouseUp(event)}
         ></canvas>
-        <Toolbar/>
+        <Toolbar
+          onModeChange={mode => this.setState({ mode })}
+          onStateChange={state => this.states[this.state.mode].onStateChange(state)}
+        />
       </div>
     )
   }
