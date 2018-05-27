@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Style.css';
 
 // components
+import PenItem from '../PenItem'
 import ToolbarItem from '../ToolbarItem'
 
 class Toolbar extends Component {
@@ -10,13 +11,20 @@ class Toolbar extends Component {
     super(props);
 
     this.state = {
+      active: 0,
       dragging: false,
-      left: 0,
-      top: 0
+      left: 10,
+      top: 10
     }
 
     document.addEventListener('mousemove', event => this.onMouseMove(event))
     document.addEventListener('mouseup', event => this.onMouseUp(event))
+  }
+
+  componentWillReceiveProps (props) {
+    this.setState({
+      active: props.active
+    })
   }
 
   onMouseDown (event) {
@@ -26,6 +34,8 @@ class Toolbar extends Component {
   }
 
   onMouseMove (event) {
+    return;
+
     if (this.state.dragging) {
       this.setState({
         left: event.clientX,
@@ -58,8 +68,21 @@ class Toolbar extends Component {
         <div className="divisor"><div></div></div>
 
         <div className="toolbar-inner-wrapper">
-          <ToolbarItem icon="pencil-alt"/>
-          <ToolbarItem icon="font"/>
+          <PenItem
+            active={this.state.active == 0}
+            onStateChange={this.props.onStateChange}
+            onClick={() => this.props.onModeChange(0)}/>
+
+          <ToolbarItem
+            active={this.state.active == 1}
+            icon="eraser"
+            onClick={() => this.props.onModeChange(1)}/>
+
+          <ToolbarItem
+            active={this.state.active == 2}
+            icon="font"
+            onClick={() => this.props.onModeChange(2)}/>
+
         </div>
       </div>
     )

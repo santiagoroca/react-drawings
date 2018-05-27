@@ -1,27 +1,19 @@
-const CHANGE_ACTIVE_COLOR = 0;
-
 class Pen {
 
   constructor (context) {
     this.lastX = 0;
     this.lastY = 0;
     this.drawing = false;
-    this.activeColor = '#000';
   }
 
   enable () {
-    this.context.strokeStyle = this.activeColor;
+    this.context.strokeStyle = "#fff";
     this.context.lineJoin = "round";
-    this.context.lineWidth = 5;
+    this.context.lineWidth = 20;
   }
 
   setContext (context) {
     this.context = context;
-
-  }
-
-  setColor (color) {
-    this.context.strokeStyle = color;
   }
 
   onMouseDown (event) {
@@ -51,15 +43,6 @@ class Pen {
   onKeyPress () {}
 
   onStateChange (state, value) {
-
-    switch (state) {
-
-      case CHANGE_ACTIVE_COLOR:
-          this.activeColor = value;
-          this.context.strokeStyle = this.activeColor;
-        break;
-
-    }
 
   }
 

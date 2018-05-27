@@ -1,14 +1,57 @@
 .toolbar-icon-wrapper {
-  padding: 10px;
+  display: flex;
   text-shadow: 1px 0 #e4e4e4;
   color: transparent;
   box-sizing: border-box;
 }
 
-.toolbar-icon-wrapper:hover {
+.toolbar-icon-hover {
+  padding: 10px;
+}
+
+.toolbar-icon-hover:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
   text-shadow: 1px 0 #444;
+}
+
+.toolbar-icon-hover-content {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+.toolbar-icon-wrapper:hover .toolbar-icon-hover-content {
+  display: block;
+}
+
+.toolbar-icon-hover-content > div {
+  display: table;
+  filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.75));
+
+}
+
+.toolbar-icon-hover-content > div > * {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.toolbar-icon-hover-content > div > span {
+  background: white;
+  padding: 10px;
+}
+
+.toolbar-icon-hover-content > div .arrow-container {
+  padding-left: 10px;
+}
+
+.toolbar-icon-hover-content > div .arrow {
+  margin-top: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
 }
 
 .red {
@@ -29,4 +72,8 @@
 
 .x5 {
   font-size: 500%;
+}
+
+.active {
+  color: black
 }
