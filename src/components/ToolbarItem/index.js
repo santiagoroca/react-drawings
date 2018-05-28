@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome'
 import './Style.css';
 
 class ToolbarItem extends Component {
@@ -40,10 +39,10 @@ class ToolbarItem extends Component {
             !!this.props.hoverContent && (
               <div className="toolbar-icon-hover-content">
                 <div>
-                  <div className="arrow-container"><div className="arrow"></div></div>
                   <span>
                     { this.props.hoverContent }
                   </span>
+                  <div className="arrow-container"><div className="arrow"></div></div>
                 </div>
               </div>
             )

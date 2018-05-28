@@ -27,26 +27,7 @@ class Text {
 
   onKeyPress (event) {
 
-    /*
-    if (event.keyCode == 8 && this.currentText.length) {
-      this.context.fillStyle = '#fff';
-      const textLength = this.currentText.length;
-      const lastLetter = this.currentText.charAt(textLength-1);
-      const letterSize = this.context.measureText(lastLetter).width;
-      this.context.fillRect(
-        this.cursorX - letterSize,
-        this.cursorY - 50,
-        letterSize,
-        60
-      )
-
-      this.cursorX -= letterSize;
-      this.currentText = this.currentText.substring(0, textLength-1);
-      return;
-    }
-    */
-
-    if (event.keyCode > 47 && event.keyCode < 123) {
+    if (event.key.match(/^[ a-z0-9:=<>]$/i)) {
       this.context.fillStyle = '#000';
       this.currentText += event.key;
       this.context.fillText(event.key, this.cursorX, this.cursorY);

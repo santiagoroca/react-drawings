@@ -52,9 +52,36 @@ class Toolbar extends Component {
 
   render() {
 
-    const position = {
-      left: `${this.state.left}px`,
-      top: `${this.state.top}px`
+    let position = {}
+    switch (this.props.position) {
+
+      case 'topright':
+        position = {
+          right: `10px`,
+          top: `10px`
+        }
+        break;
+
+      case 'bottomleft':
+        position = {
+          left: `10px`,
+          bottom: `10px`
+        }
+        break;
+
+      case 'bottomright':
+        position = {
+          right: `10px`,
+          bottom: `10px`
+        }
+        break;
+
+      default:
+        position = {
+          left: `10px`,
+          top: `10px`
+        }
+
     }
 
     return (
@@ -68,6 +95,7 @@ class Toolbar extends Component {
         <div className="divisor"><div></div></div>
 
         <div className="toolbar-inner-wrapper">
+
           <PenItem
             active={this.state.active == 0}
             onStateChange={this.props.onStateChange}

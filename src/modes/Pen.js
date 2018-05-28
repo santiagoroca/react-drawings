@@ -12,12 +12,13 @@ class Pen {
   enable () {
     this.context.strokeStyle = this.activeColor;
     this.context.lineJoin = "round";
-    this.context.lineWidth = 5;
+    this.context.lineWidth = 7;
   }
 
   setContext (context) {
     this.context = context;
-
+    this.context.lineJoin = "round";
+    this.context.lineWidth = 7;
   }
 
   setColor (color) {

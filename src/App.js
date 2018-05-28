@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // Compoents
@@ -90,6 +89,7 @@ class App extends Component {
            onMouseUp={event => this.onMouseUp(event)}
         ></canvas>
         <Toolbar
+          position={this.props.position || 'topright'}
           key={0}
           active={this.state.mode}
           onModeChange={mode => { this.setState({ mode }); this.states[mode].enable()} }
@@ -120,4 +120,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default App
