@@ -116,6 +116,10 @@ class App extends Component {
     if (this.props.onGetMediaStream) {
       this.props.onGetMediaStream(this.canvasRef.current.captureStream(25));
     }
+
+    if (this.props.onGetContext2D) {
+      this.props.onGetContext2D(this.context);
+    }
   }
 
 }
