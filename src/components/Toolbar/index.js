@@ -3,6 +3,7 @@ import './Style.css';
 
 // components
 import PenItem from '../PenItem'
+import EraserItem from '../EraserItem'
 import ToolbarItem from '../ToolbarItem'
 
 class Toolbar extends Component {
@@ -101,10 +102,11 @@ class Toolbar extends Component {
             onStateChange={this.props.onStateChange}
             onClick={() => this.props.onModeChange(0)}/>
 
-          <ToolbarItem
+          <EraserItem
             active={this.state.active == 1}
-            icon="eraser"
-            onClick={() => this.props.onModeChange(1)}/>
+            onStateChange={this.props.onStateChange}
+            onClick={() => this.props.onModeChange(1)}
+            />
 
           <ToolbarItem
             active={this.state.active == 2}
