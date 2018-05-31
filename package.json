@@ -1,6 +1,6 @@
 {
   "name": "react-drawings",
-  "version": "0.1.6",
+  "version": "0.1.11",
   "private": false,
   "main": "build/index.js",
   "dependencies": {

@@ -146,12 +146,6 @@ class App extends Component {
     )
   }
 
-  componentDidUpdate () {
-    if (this.props.onGetMediaStream) {
-      this.props.onGetMediaStream(this.canvasRef.current.captureStream(25));
-    }
-  }
-
   componentDidMount () {
     this.context = this.canvasRef.current.getContext('2d');
 
@@ -162,9 +156,20 @@ class App extends Component {
     const width = this.canvasRef.current.clientWidth;
     const height = this.canvasRef.current.clientHeight;
 
-    this.setState({
-      width, height
-    })
+    this.setState(
+      {
+        width, height
+      },
+      () => {
+        if (this.props.onGetMediaStream) {
+          this.props.onGetMediaStream(this.canvasRef.current.captureStream(25));
+        }
+
+        if (this.props.onGetContext2D) {
+          this.props.onGetContext2D(this.context);
+        }
+      }
+    )
 
     if (this.props.onGetContext2D) {
       this.props.onGetContext2D(this.context);
